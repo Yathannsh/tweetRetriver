@@ -15,28 +15,28 @@
 			<ul class="tabs">
 				<li> Movie Tweet Search </li>
 			</ul>
-			<section class="search-box" align="center">
-				<div class="outer-search-box" align="center">
+			<section class="search-box" >
+				<div class="outer-search-box">
 					<form>
-						<input type="text" class="search" value="starwars" ng-model="searchTerm"  disabled> <button type="submit" ng-click="doSearch()" >
+						<input type="text" class="search"  ng-model="searchTerm"  disabled> <button type="submit" ng-click="doSearch()" >
 						<span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
 					</form>
 				</div>
+
 			</section>
 			<div id="loader" style="display:none;"></div> 
 				<section class="streamers">
+
 					<ul id="streamerList" ng-repeat="tweet in twitterResult.statuses">
-					<div class="container-fluid">
-						<div class="row">
-							 <div class=" col-md-2 col-sm-4 user-image " ><img src="{{tweet.user.profile_image_url_https}}"><br>
-								<h3>@{{tweet.screen_name}}</h3>
-								</div>
-								
+					<div class="media">
+							 <div class=" media-left user-image " ><img src="{{tweet.user.profile_image_url_https}}"><br>
+								<span class="thead"> @{{tweet.screen_name}}</span> 
+								</div><div class="media-body">
 								<h3 id="unn">
 								<b  ng-bind-html="tweet.user.name"></b></h3><br>
 								<div class="time"><b ng-bind-html="tweet.created_at"></b></div></h3><br>
-								<div class=" col-md-10 col-sm-8" class="user-description" ng-bind-html="tweet.text"></div>
-							</div></div>
+								<div class=" col-md-10 col-sm-10" class="user-description" ng-bind-html="tweet.text"></div></div>
+							</div>
 						<hr>
 					</ul>  
 				</section> </div></div>
